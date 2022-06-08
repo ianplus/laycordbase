@@ -7,6 +7,6 @@ function extraerParametros(url) {
   return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
 }
 
-$("#demo").text(newURL);
+document.getElementById("demo").innerHTML = "New text!";
 console.log(newURL);
 console.log(extraerParametros(newURL));
