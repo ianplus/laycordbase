@@ -7,9 +7,6 @@ function extraerParametros(url) {
   return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
 }
 
-try {
-  console.log(newURL);
-  console.log(extraerParametros(newURL));
-} catch (e) {
-  console.log(`Error: ${e.message}`);
-}
+$("#demo").text(newURL);
+console.log(newURL);
+console.log(extraerParametros(newURL));
