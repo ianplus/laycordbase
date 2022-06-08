@@ -14,13 +14,13 @@ function extraerParametros(url) {
   }
   return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
 }
-var items = extraerParametros(newURL)
+var items = [extraerParametros(newURL)];
         
 // document.getElementById("demo").innerHTML
 console.log(items[0]);
+console.log(items[1]);
 //console.log(newURL);
-console.log(
-    extraerParametros(newURL));
+console.log(extraerParametros(newURL));
         </script>
 </body>
 </html>
