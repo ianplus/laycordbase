@@ -8,6 +8,7 @@ function extraerParametros(url) {
 }
 
 try {
+  document.getElementById("demo").innerHTML = newURL.toString();
   console.log(newURL);
   console.log(extraerParametros(newURL));
 } catch (e) {
