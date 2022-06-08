@@ -4,7 +4,7 @@
     uhhhh
 </head>
 <body>
-    <p id="demo"></p>
+    <p id="demo"><img src="" alt=""></p>
     <script>
 var newURL = window.location.href
 
@@ -14,10 +14,12 @@ function extraerParametros(url) {
   }
   return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
 }
-
-document.getElementById("demo").innerHTML = "New text!";
+var items = extraerParametros(newURL)
+        
+document.getElementById("demo").innerHTML = <img src=items[0] alt="">
 console.log(newURL);
-console.log(extraerParametros(newURL));
+console.log(
+    extraerParametros(newURL));
         </script>
 </body>
 </html>
