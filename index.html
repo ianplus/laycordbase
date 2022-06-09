@@ -4,8 +4,6 @@
     uhhhh
 </head>
 <body>
-    <p id="avatar"><img src="" alt=""></p>
-    <p id="bg"><img src="" alt=""></p>
     <p id="text"></p>
     
     <script>
@@ -18,8 +16,16 @@
         }
         var items = extraerParametros(newURL);
         // fill
-        document.getElementById("avatar").src = items.avatarurl;
-        document.getElementById("bg").src = items.bgurl;
+        
+        const avatar = new Image(200, 200); // width, height
+        const background = new Image(500, 200); // width, height
+        
+        avatar.src = items.avatarurl;
+        background.src = items.bgurl;
+        
+        document.body.appendChild(avatar);
+        document.body.appendChild(background);
+        
         document.getElementById("text").innerHTML = items.text;
         // logs
         console.log(items);
