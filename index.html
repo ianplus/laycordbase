@@ -4,23 +4,28 @@
     uhhhh
 </head>
 <body>
-    <p id="demo"><img src="" alt=""></p>
+    <p id="avatar"><img src="" alt=""></p>
+    <p id="bg"><img src="" alt=""></p>
+    <p id="text"></p>
+    
     <script>
-var newURL = window.location.href
-
-function extraerParametros(url) {
-  if (typeof url != 'string') {
-    throw TypeError('precisa ser una cadena');
-  }
-  return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
-}
-var items = extraerParametros(newURL);
-        
-// document.getElementById("demo").innerHTML
-console.log(items.value[0]);
-console.log(items.value[1]);
-//console.log(newURL);
-console.log(extraerParametros(newURL));
-        </script>
+        var newURL = window.location.href
+        function extraerParametros(url) {
+            if (typeof url != 'string') {
+                throw TypeError('precisa ser una cadena');
+            }
+            return (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, p) => ((a[p.slice(0, p.indexOf("="))] = p.slice(p.indexOf('=') + 1)), a), {});
+        }
+        var items = extraerParametros(newURL);
+        // fill
+        document.getElementById("avatar").src = items.avatarurl;
+        document.getElementById("bg").src = items.bgurl;
+        document.getElementById("text").innerHTML = items.text;
+        // logs
+        console.log(items);
+        console.log(items.avatarurl);
+        console.log(items.bgurl);
+        console.log(items.text);
+    </script>
 </body>
 </html>
