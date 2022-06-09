@@ -4,7 +4,10 @@
     a
 </head>
 <body>
-    <p id="text"></p>
+    <div id="bg">
+        <div id="av"></div>
+        <p id="text"></p>
+    </div>
     
     <script>
         var newURL = window.location.href
@@ -21,33 +24,20 @@
         const background = new Image(500, 200); // width, height
         
         avatar.src = items.avatarurl;
-        avatar.id = "av";
-        
-        avatar.position = "absolute";
-        avatar.left = "0px";
-        avatar.right = "0px";
-        avatar.top = "50px";
-        avatar.bottom = "0px";
-        
         background.src = items.bgurl;
-        background.id = "bg";
         
-        background.position = "fixed";
-        background.left = "0px";
-        background.right = "0px";
-        background.top = "0px";
-        background.bottom = "0px";
+        var bg = document.getElementById("bg")
+        var av = bg.getElementById("av")
+        av.appendChild(avatar);
+        bg.appendChild(background);
+        bg.getElementById("text").innerHTML = items.text;
         
-        
-        document.body.appendChild(avatar);
-        document.body.appendChild(background);
-        
-        document.getElementById("text").innerHTML = items.text;
         // logs
-        console.log(items);
-        console.log(items.avatarurl);
-        console.log(items.bgurl);
-        console.log(items.text);
+        
+        //console.log(items);
+        //console.log(items.avatarurl);
+        //console.log(items.bgurl);
+        //console.log(items.text);
     </script>
 </body>
 </html>
