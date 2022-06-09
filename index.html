@@ -21,7 +21,10 @@
         const background = new Image(500, 200); // width, height
         
         avatar.src = items.avatarurl;
+        avatar.id = "av";
+        
         background.src = items.bgurl;
+        background.id = "bg";
         
         document.body.appendChild(avatar);
         document.body.appendChild(background);
