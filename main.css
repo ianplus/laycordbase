@@ -1,0 +1,14 @@
+#av {
+ position = fixed;
+  left = 0px;
+  right = 0px;
+  top = 0px;
+  bottom = 0px;
+}
+#bg {
+ position = absolute;
+  left = 0px;
+  right = 0px;
+  top = 0px;
+  bottom = 0px;
+}
