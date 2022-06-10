@@ -3,7 +3,7 @@
     <head>
         </head>
 <body>
-    <div>
+    <div id="banner">
         <div id="images">
         </div>
         <p style="position: relative;text-align: center;width: 600px;top: -300px;font-size: x-large;" id="text"></p>
@@ -31,10 +31,10 @@
         avatar.id = "av";
         avatar.style = "position: relative;top: -150px;left: -400px;";
         
-        var main = document.getElementById("bg")
+        //var main = document.getElementById("bg")
         var imgs = document.getElementById("images")
         imgs.appendChild(avatar);
-        bg.appendChild(background);
+        imgs.appendChild(background);
         document.getElementById("text").innerHTML = "Welcome " + items.text;
         
         // logs
