@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    a
+    b
 </head>
 <body>
     <div>
         <div id="images">
         </div>
-        <p id="text"></p>
+        <p style="position: relative;text-align: center;width: 600px;top: -300px;font-size: x-large;" id="text"></p>
     </div>
     
     <script>
@@ -21,7 +21,7 @@
         var items = extraerParametros(newURL);
         // fill
         
-        const background = new Image(500, 200); // width, height
+        const background = new Image(600, 400); // width, height
         const avatar = new Image(200, 200); // width, height
         
         background.src = items.bgurl;
@@ -30,7 +30,7 @@
         
         avatar.src = items.avatarurl;
         avatar.id = "av";
-        avatar.style = "position:relative;";
+        avatar.style = "position: relative;top: -380px;left: 200px;";
         
         //var main = document.getElementById("main") ?
         var imgs = document.getElementById("images")
