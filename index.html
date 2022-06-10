@@ -4,8 +4,9 @@
     a
 </head>
 <body>
-    <div id="bg">
-        <div id="av"></div>
+    <div>
+        <div id="images">
+        </div>
         <p id="text"></p>
     </div>
     
@@ -20,22 +21,27 @@
         var items = extraerParametros(newURL);
         // fill
         
-        const avatar = new Image(200, 200); // width, height
         const background = new Image(500, 200); // width, height
+        const avatar = new Image(200, 200); // width, height
+        
+        background.src = items.bgurl;
+        background.id = "bg";
+        background.style = "position:relative;";
         
         avatar.src = items.avatarurl;
-        background.src = items.bgurl;
+        avatar.id = "av";
+        avatar.style = "position:relative;";
         
-        var bg = document.getElementById("bg")
-        var av = document.getElementById("av")
-        av.appendChild(avatar);
-        bg.appendChild(background);
+        //var main = document.getElementById("main") ?
+        var imgs = document.getElementById("images")
+        imgs.appendChild(avatar);
+        imgs.appendChild(background);
         document.getElementById("text").innerHTML = items.text;
         
         // logs
         
         //console.log(items);
-        //console.log(items.avatarurl);
+        console.log(items["avatarurl"]);
         //console.log(items.bgurl);
         //console.log(items.text);
     </script>
