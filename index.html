@@ -27,10 +27,10 @@
         background.src = items.bgurl;
         
         var bg = document.getElementById("bg")
-        var av = bg.getElementById("av")
+        var av = document.getElementById("av")
         av.appendChild(avatar);
         bg.appendChild(background);
-        bg.getElementById("text").innerHTML = items.text;
+        document.getElementById("text").innerHTML = items.text;
         
         // logs
         
